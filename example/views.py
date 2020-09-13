@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse
-from .tasks import sleepy
+from .tasks import *
 
 # Create your views here.
 
