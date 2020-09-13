@@ -11,8 +11,8 @@ def sleepy(duration):
     time.sleep(duration)
     print("Done")
 
-@periodic_task(run_every=crontab(minute=1))
-def my_first_task():
-    print("My first task!!!")
+@shared_task
+def print_hello():
+    print('Hello World!')
 
     
