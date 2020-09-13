@@ -1,6 +1,7 @@
 from django.urls import path,include
-from .views import index
+from .views import *
 
 urlpatterns = [
-    path("",index,name='index')
+    path("",index,name='index'),
+    path("add/",addInstance,name="add"),
 ]

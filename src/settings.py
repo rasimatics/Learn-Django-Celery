@@ -55,7 +55,7 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Baku'
 
 USE_I18N = True
 
@@ -126,10 +126,12 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
 from celery.schedules import crontab
+from datetime import timedelta
+
 CELERY_BEAT_SCHEDULE = {
-    'task-mul': {
-        'task': 'example.tasks.print_hello',
-        'schedule': crontab(minute='*/1'),
+    'add-instance': {
+        'task': 'example.tasks.add_instance_periodic',
+        'schedule': timedelta(seconds=10),
     },
 }
 
