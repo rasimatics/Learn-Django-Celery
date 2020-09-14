@@ -8,8 +8,9 @@ Periodic and shared tasks example in Celery with Redis
 pip install -r requirements.txt
 ```
 
-## Start Redis Server
+## Redis
 ##### First Install Redis Server
+## Start Redis Server
 ```bash
 redis-server
 ```
