@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Celery</title>
+    </head>
+    <body style="display: flex;flex-direction: row;justify-content: space-around">
+        <div>
+            <h1>Shared task</h1>
+            <h3>After clicking refresh the page</h3>
+            <a href="{%url 'add'%}">Create 2 instances</a>
+            {% if instances1 %}
+                <ul>
+                {% for instance in instances1 %}
+                    <li>
+                        <h5>{{ instance.name }}</h5>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div>
+            <h1>Periodic task</h1>
+            <h3>Added in every 10 seconds (refresh page)</h3>
+            {% if instances2 %}
+                <ul>
+                {% for instance in instances2 %}
+                    <li>
+                        <h5>{{ instance.name }}</h5>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+
+    </body>
+</html>
