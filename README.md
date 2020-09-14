@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## Start Redis Server
-##### First Install Redis Server on Windows
+##### First Install Redis Server
 ```bash
 redis-server
 ```
